@@ -15,10 +15,10 @@ let port = 4566
 app.use(bodyparse.urlencoded({extended:false}))
 
 
-app.use('/admin',adminRoute)
+app.use('/admin',adminRoute.router)
 app.use(shopRoutes)
 
-
+console.log(adminRoute.product)
 app.use((req,res,next)=>{
     res.sendFile(path.join(__dirname , 'views' , 'error.html'))
 })
